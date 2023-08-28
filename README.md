@@ -1,9 +1,9 @@
 # covergo_test_case_test_scenario
 
 
-The task of Geex-Arts, includes test cases and Bug Reports of Sign In/Sign Up pages.
+The task of CoverGO, includes test cases written in Gherkin language and in a standard template, and bug reports of the login page.////
 
-- This is the test documentation of the task [Geex-Arts](https://eyeb-web-git-dev-eyeb.vercel.app/feed) which includes a test document file of the Sign Up/Login pages, you can find the test cases and bug reports, also test environment parameters, requirements, and possible test scenarios, test data (in one table for easy use).
+- This is the test documentation of the task [GoverGo](https://www.example.com) which includes a test document file of the Sign Up/Login pages, you can find the test cases and bug reports, also test environment parameters, requirements, and possible test scenarios, test data (in one table for easy use).
 
   There are the scenarios of the documented file.
 - The [Geex-Arts Test Cases.md](https://github.com/mariamavetisyan22/eyeb-web-test-case-bug-report-task/blob/main/Geex-Arts%20Test%20Cases.md) file indicates test cases for the following scenarios.
