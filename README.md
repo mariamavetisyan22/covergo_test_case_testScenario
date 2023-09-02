@@ -103,5 +103,8 @@ Screen Resolution | 1920x1080 pixels |
     - userwithoutpermissions/Perms123# (a user who hasn’t any permissions)
 
 ## **Test Execution Results**
-
-- The [GoverGo](https://www.example.com) file indicates buf reports found bugs in introduced test scenarios.
+Parameters | Values | 
+--- | --- |
+**Total** | **$${\color{black}23}$$** |
+Passed | $${\color{green}23}$$ |
+Failed | $${\color{red}5}$$ |
