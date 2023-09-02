@@ -1,33 +1,83 @@
 # covergo_test_case_test_scenario
 
 
-The task of CoverGO, includes test cases written in Gherkin language and in a standard template, and bug reports of the login page.////
+The task of CoverGO, includes test cases written in Gherkin language and in a standard template, and bug reports of the login page.
 
-- This is the test documentation of the task [GoverGo](https://www.example.com) which includes a test document file of the Sign Up/Login pages, you can find the test cases and bug reports, also test environment parameters, requirements, and possible test scenarios, test data (in one table for easy use).
+- This is the compact test document file of the tested page, you can find the test environment parameters, requirements, test scenarios, test data (in one table for easy use), test cases, and bug report(s).
 
-  There are the scenarios of the documented file.
-- The [Geex-Arts Test Cases.md](https://github.com/mariamavetisyan22/eyeb-web-test-case-bug-report-task/blob/main/Geex-Arts%20Test%20Cases.md) file indicates test cases for the following scenarios.
+  There are the scenarios of the documented file written in _**Gherkin language**_.
+- The [GoverGo](https://www.example.com) file indicates test cases for the following scenarios.
   
-  1. Check Sign Up using a valid email.
-  2. Check Sign Up using a valid phone.
-  3. Check Sign Up using a Google Account.
-  4. Check Sign In using a valid existing phone/email.
+## **Test Scenarios**
+#### Feature: User Login
+
+As a registered user  
+I want to be able to log in  
+So that I can access my account  
+
+#### Scenario: Successful login with valid username and password
+
+_Given_ I am on the login page  
+_When_ I enter valid credentials (username and password)  
+_And_ I click the login button  
+_Then_ I should be redirected to the home page  
+_And_ I should successfully log in with my credentials  
+
+#### Scenario: Unsuccessful login with invalid username and password
+
+_Given_ I am on the login page  
+_When_ I enter an invalid username  
+_And_ I enter an invalid password  
+_And_ I click the login button  
+_Then_ I should see an error message "Invalid username or password"  
+
+#### Scenario: Unsuccessful login with a valid username and invalid password
+
+_Given_ I am on the login page  
+_When_ I enter a valid username  
+_And_ I enter an invalid password  
+_And_ I click the login button  
+_Then_ I should see an error message "Invalid username or password"  
+
+#### Scenario: Unsuccessful login with unknown username (not authorized)
+
+_Given_ I am on the login page  
+_When_ I enter an unknown username  
+_And_ I enter a password  
+_And_ I click the login button  
+_Then_ I should see an error message "Username not found"  
+
+#### Scenario: Unsuccessful login without entries (username and password)
+
+_Given_ I am on the login page  
+_When_ I click the login button without entering credentials  
+_Then_ I should see an error message "Missing username and password"  
+
+#### Scenario: Successful login for users with account balance over $100
+
+_Given_ I am on the login page  
+_When_ I enter a valid username with an account balance over $100  
+_And_ I enter a valid password  
+_And_ I click the login button  
+_Then_ I should be redirected to the home page  
+_And_ I should see an ad on the page  
+
 
 ## **Test Objective**
  
-Testing the page [Geex-Arts](https://eyeb-web-git-dev-eyeb.vercel.app/feed) aims to ensure that all the essential functionalities and features work as intended and provide a seamless user experience during the sign-up and login process.
+The objective of testing the page is to ensure that all the key functionalities and features work as intended and provide a seamless user experience during the registration process.
 
 ## **Test Environment**
 Parameters | Values | 
 --- | --- |
-Operating System | Windows 11 Home, 22H2, 22621.1928 |
-Browser | Chrome: 114.0.5735.199 (Official Build) (64-bit) |
+Operating System | Windows 11 Home, 22H2, 22621.1992 |
+Browser | Chrome: 115.0.5790.102 (Official Build) (64-bit) |
 Screen Resolution | 1920x1080 pixels |
 
 ## **Requirements**
 
-- **Password:** field must be filled with English alphabet letters and include three character types: lowercase letters, uppercase letters and numbers. You also have the option to use any of these special characters: # [ ] ( ) @ $ & * ! ? | , . ^ / \ + _ -
-   - At least 8 characters
+- **Username:** The field should allow only entered login containing lower letters and numbers without space. 
+- **Password:** The field must be filled with English alphabet letters and include three character types: lowercase letters, uppercase letters, and numbers. You also have the option to use any of these special     - At least 8 characters
    - At least one uppercase letter (ABC...)
    - At least one lowercase letter (abc...)
    - At least one number (123...)
@@ -35,14 +85,23 @@ Screen Resolution | 1920x1080 pixels |
 
 ## **Test Data**
 #### _Valid Test Data_
-  - **Email:** mar.test.avetis@gmail.com
-  - **Phone** +13022814650;
-  - **Password:** Testuser1!;
+  - **UserName/Password:**
+    - validuser/Validuser1!
+    - memberuser/Memberuser2@
+    - handleruser/Handleruser3#
+    - userwithbalance/Validuser1! (user with 100$ on account balance)
+    - admin/Admin1234!
+
 #### _Invalid Test Data_
-  - **Email:** m@mailinator.com; test#gmail.com; test
-  - **Phone** +3197010526431;
-  - **Password:** test; 123; !"£$; TEST; 
+  - **UserName/Password:**
+    - empty fields
+    - invaliduser/invaliduser (the user who isn’t authorized)
+    - User12!@/User12!@
+    - user/user
+    - 123/123
+    - !”£$%^/”£$£$£
+    - userwithoutpermissions/Perms123# (a user who hasn’t any permissions)
 
 ## **Test Execution Results**
 
-- The [Geex-Arts Bug Reports.md](https://github.com/mariamavetisyan22/eyeb-web-test-case-bug-report-task/blob/main/Geex-Arts%20Bug%20Reports.md) file indicates buf reports found bugs of introduced test scenarios.
+- The [GoverGo](https://www.example.com) file indicates buf reports found bugs in introduced test scenarios.
